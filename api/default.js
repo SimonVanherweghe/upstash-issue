@@ -1,10 +1,11 @@
-import { Redis } from "@upstash/redis"
-import fetch from "node-fetch"
-const redis = new Redis({ url: 'url', token: 'token' });
+import { redisTest } from "../lib/redis";
+const fetch = require('@vercel/fetch')()
 
 export default async (request, response) => {
-	const todo = awit fetch('https://jsonplaceholder.typicode.com/todos/1').then(r => r.json())
-	console.log(redis);
+	console.log("default")
+	const todo = await fetch('https://jsonplaceholder.typicode.com/todos/1').then(r => r.json());
+
+	console.log(redisTest);
 	response.status(200).json({
 		node_version: process.version,
 		body: request.body,

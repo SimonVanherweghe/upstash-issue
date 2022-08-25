@@ -1,9 +1,7 @@
-import { Redis } from "@upstash/redis/with-fetch"
-
-const redis = new Redis({ url: 'url', token: 'token' });
+import { redisTest } from "../lib/redis";
 
 export default async (request, response) => {
-	console.log(redis);
+	console.log(redisTest);
 	response.status(200).json({
 		node_version: process.version,
 		body: request.body,
