@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "@upstash/redis": "^1.12.0",
-    "@vercel/fetch": "^6.2.0"
+    "isomorphic-fetch": "^3.0.0"
   }
 }
